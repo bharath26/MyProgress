@@ -10,6 +10,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.widget.Toast;
 import android.os.Build;
 import android.os.ParcelUuid;
 import android.provider.Settings;
@@ -2451,6 +2452,9 @@ public class BluetoothLePlugin extends CordovaPlugin {
 
         switch (intent.getIntExtra(BluetoothAdapter.EXTRA_STATE, BluetoothAdapter.ERROR)) {
           case BluetoothAdapter.STATE_OFF:
+			Toast.makeText(context,
+                        "Bluetooth: STATE_OFF",
+                        Toast.LENGTH_SHORT).show();
             addProperty(returnObj, keyStatus, statusDisabled);
             addProperty(returnObj, keyMessage, logNotEnabled);
 
@@ -2463,6 +2467,9 @@ public class BluetoothLePlugin extends CordovaPlugin {
 
             break;
           case BluetoothAdapter.STATE_ON:
+			Toast.makeText(context,
+                        "Bluetooth: STATE_ON",
+                        Toast.LENGTH_SHORT).show();
 
             addProperty(returnObj, keyStatus, statusEnabled);
 
