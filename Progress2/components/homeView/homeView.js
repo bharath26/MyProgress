@@ -17,20 +17,14 @@ function dataBaseFunction() {
     app.readRecords('test');
 }
 function toast(){
-    
-    
     if(app && app.mobileApp){
          app.mobileApp.navigate("components/schedule/schedule.html");
     }
-    alert("toast here");
-    var x = document.getElementById("snackbar")
-    alert("milgaya");
-    // Add the "show" class to DIV
+    setTimeout(function(){var x = document.getElementById("snackbar");
     x.className = "show";
-    alert("class mil");
-    // After 3 seconds, remove the show class from DIV
-    setTimeout(function(){ x.className = x.className.replace("show", ""); }, 9000);
+    setTimeout(function(){ x.className = x.className.replace("show", ""); },3000);
     alert("came out");
+},1000);
 }
 function authenticate() {
     var flag = validate(document.getElementById('email_box').value);
